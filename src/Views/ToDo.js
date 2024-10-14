@@ -1,7 +1,9 @@
 import {motion} from "framer-motion"
 import { Input } from "../components/Input"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { WorkItems } from "../components/WorkItems";
+import axios from "axios";
+import { wait } from "@testing-library/user-event/dist/utils";
 
 
 export const ToDo=()=>{
@@ -10,6 +12,8 @@ export const ToDo=()=>{
 
 
 
+
+  
 
 
     return <div className=" w-full h-full flex justify-center items-center ">
@@ -31,17 +35,7 @@ export const ToDo=()=>{
                 />
                 
                   
-                <WorkItems items={works} backItems={(tempItems)=>{setWorks(tempItems)}} delay={1} duration={3} />
-                        {/* <motion.li initial={{y:100,opacity:0}} animate={{y:0,opacity:1}}  className=" w-full h-[60px] overflow-hidden flex justify-between items-center bg-amber-50 border border-amber-400 rounded-lg   " >
-                            <div className=" px-4 flex overflow-hidden ">
-                                <p style={{  textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden', maxWidth: '100%' }}  >
-                                    AAAA hhh hhhh hhhh hhh hh hhh hhhh hhh  justify-between items-center 
-                                </p>
-                            </div>
-                            <button className=" px-[10px]   h-full bg-amber-600 text-3xl text-gray-200 hover:text-gray-100 hover:bg-amber-500 duration-300   " ><PiEnvelopeSimpleOpenLight  /></button>
-                        </motion.li> */}
-                   
-                
+                <WorkItems items={works} backItems={(tempItems)=>{setWorks(tempItems)}} delay={1} duration={3} />                
             </motion.div>
         </div>
     </div>
